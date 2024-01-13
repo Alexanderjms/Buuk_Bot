@@ -27,7 +27,7 @@ bot = commands.Bot(command_prefix='!', intents=intents, case_insensitive=True)
 
 @bot.event
 async def on_ready():
-    print('Estamos en línea como {0.user}'.format(bot))
+    print('En línea')
     canal = bot.get_channel()  # Usa la ID de tu canal
     await canal.send('¡Hola! Soy Buuk')
 
