@@ -19,6 +19,12 @@ Este es un bot de Discord que permite a los usuarios gestionar sus tareas de man
 
 
 ![Captura de pantalla (24)](https://github.com/Aleexqnder/Buuk_Bot/assets/105314851/1eefa15d-c7bd-475d-be97-c4355056a713)
+
+-  `!Tareas` Muestra todas las tareas del día actual.
+
+![image](https://github.com/Aleexqnder/Buuk_Bot/assets/105314851/b6a50ab6-11e3-4d08-83d1-15763c0e143e)
+
+
 - `!tareas <dia>` Muestra las tareas para el día especificado. Si no se especifica ningún día, muestra las tareas para el día actual.
 
 
@@ -28,7 +34,6 @@ Este es un bot de Discord que permite a los usuarios gestionar sus tareas de man
 
 
 ![image](https://github.com/Aleexqnder/Buuk_Bot/assets/105314851/85e3dfbf-1c3f-414f-a135-e4fa511c9ab1)
-
 
 ## Uso
 
