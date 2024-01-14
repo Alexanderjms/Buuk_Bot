@@ -3,7 +3,8 @@ from discord.ext import commands
 import datetime
 import json
 
-# Cargar las tareas desde un archivo al iniciar el bot
+# Cargar las tareas desde un archivo al iniciar el bot (De forma que siempre que se inicie el bot las tareas queden guardadas). 
+
 with open('tareas.json', 'r', encoding='utf-8') as f:
     lista_de_tareas = json.load(f)
 
