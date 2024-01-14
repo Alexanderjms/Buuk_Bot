@@ -60,7 +60,7 @@ async def tareas(ctx, dia=None):
 @bot.command()
 async def Nuevatarea(ctx, *args):
     dia_sin_tilde = args[-1].lower()  # Convertir a minúsculas
-    tarea = ' '.join(args[:-1])  # Todos los demás argumentos son la tarea
+    tarea = ' '.join(args[:-1]) 
 
     # Mapeo de días sin tildes a días con tildes
     dias_con_tilde = {
@@ -73,11 +73,12 @@ async def Nuevatarea(ctx, *args):
         "domingo": "Domingo"
     }
 
-    # Obtener el día con tilde correspondiente al día sin tilde
+    # Obtener el día con tilde correspondiente al día sin tilde 
     dia_con_tilde = dias_con_tilde.get(dia_sin_tilde)
 
-    if dia_con_tilde and dia_con_tilde in lista_de_tareas:
-        lista_de_tareas[dia_con_tilde].append(tarea)
+    if dia_con_tilde and dia_con_tilde in lista_de_tareas: #Evita errores cuando el usuario coloque días de la semana con o sin tilde. 
+
+ lista_de_tareas[dia_con_tilde].append(tarea)
         await ctx.send(f'La tarea "{tarea}" ha sido añadida para el día {dia_con_tilde}.')
         # Guardar las tareas en un archivo
         with open('tareas.json', 'w', encoding='utf-8') as f:
