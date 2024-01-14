@@ -1,4 +1,4 @@
-# Buuk_Bot
+# Buuk Bot
 
 El bot "Buuk" es una herramienta útil para recibir tu lista diaria de tareas según el día de la semana. Organiza tu día con facilidad y mantente al tanto de tus actividades.
 # Bot de Discord para la Gestión de Tareas
