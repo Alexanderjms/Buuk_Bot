@@ -2,7 +2,7 @@
 
 # Bot de Discord para la Gestión de Tareas
 
-Este es un bot de Discord que permite a los usuarios gestionar sus tareas de manera eficiente.
+Este es un bot de Discord que permite a los usuarios gestionar sus tareas de manera sencilla.
 
 ## Características
 
