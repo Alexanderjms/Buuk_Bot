@@ -3,16 +3,11 @@ from discord.ext import commands
 import datetime
 import json
 
-# Cargar las tareas desde un archivo al iniciar el bot (De forma que siempre que se inicie el bot las tareas queden guardadas). 
-with open('tareas.json', 'r', encoding='utf-8') as f:
-    lista_de_tareas = json.load(f)
-
 try:
     with open('tareas.json', 'r', encoding='utf-8') as f:
         lista_de_tareas = json.load(f)
 except FileNotFoundError:
 
-    # Si el archivo no existe, usar una lista de tareas vacía
     lista_de_tareas = {
         "Lunes": [],
         "Martes": [],
@@ -29,7 +24,7 @@ bot = commands.Bot(command_prefix='!', intents=intents, case_insensitive=True)
 @bot.event
 async def on_ready():
     print('En línea')
-    canal = bot.get_channel() # Dentro del paréntesis colocar la ID de tu canal de tu servidor. 
+    canal = bot.get_channel('') # Introduce aquí el ID del canal donde quieres que el bot envíe el mensaje de inicio.
 
     await canal.send('¡Hola! Soy Buuk')
 
@@ -59,10 +54,9 @@ async def tareas(ctx, dia=None):
 
 @bot.command()
 async def Nuevatarea(ctx, *args):
-    dia_sin_tilde = args[-1].lower()  # Convertir a minúsculas
+    dia_sin_tilde = args[-1].lower() 
     tarea = ' '.join(args[:-1]) 
 
-    # Mapeo de días sin tildes a días con tildes
     dias_con_tilde = {
         "lunes": "Lunes",
         "martes": "Martes",
@@ -73,14 +67,11 @@ async def Nuevatarea(ctx, *args):
         "domingo": "Domingo"
     }
 
-    # Obtener el día con tilde correspondiente al día sin tilde 
     dia_con_tilde = dias_con_tilde.get(dia_sin_tilde)
 
     if dia_con_tilde and dia_con_tilde in lista_de_tareas: #Evita errores cuando el usuario coloque días de la semana con o sin tilde. 
-
- lista_de_tareas[dia_con_tilde].append(tarea)
+        lista_de_tareas[dia_con_tilde].append(tarea)
         await ctx.send(f'La tarea "{tarea}" ha sido añadida para el día {dia_con_tilde}.')
-        # Guardar las tareas en un archivo
         with open('tareas.json', 'w', encoding='utf-8') as f:
             json.dump(lista_de_tareas, f, ensure_ascii=False)
     else:
