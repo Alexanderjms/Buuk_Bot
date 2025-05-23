@@ -69,7 +69,7 @@ async def Nuevatarea(ctx, *args):
 
     dia_con_tilde = dias_con_tilde.get(dia_sin_tilde)
 
-    if dia_con_tilde and dia_con_tilde in lista_de_tareas: #Evita errores cuando el usuario coloque días de la semana con o sin tilde. 
+    if dia_con_tilde and dia_con_tilde in lista_de_tareas:
         lista_de_tareas[dia_con_tilde].append(tarea)
         await ctx.send(f'La tarea "{tarea}" ha sido añadida para el día {dia_con_tilde}.')
         with open('tareas.json', 'w', encoding='utf-8') as f:
