@@ -24,7 +24,7 @@ bot = commands.Bot(command_prefix='!', intents=intents, case_insensitive=True)
 @bot.event
 async def on_ready():
     print('En línea')
-    canal = bot.get_channel('') # Introduce aquí el ID del canal donde quieres que el bot envíe el mensaje de inicio.
+    canal = bot.get_channel()
 
     await canal.send('¡Hola! Soy Buuk')
 
